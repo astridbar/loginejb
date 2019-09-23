@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+ <h:head></h:head>
+ <h:body style="text-align:center">
+     <p:growl id="mensajes" showDetail="true" life="200" />
+     <h:form>
+         <p:messages autoUpdate="true" showDetail="true"/>
+           <p:panel header="Login" style="width:100%">
+             
+             <h:panelGrid columns="2" cellpadding="5">
+                 <h:outputLabel for="username" value="Usuario:" />
+                 <p:inputText value="#{ilogin.usuario.usuario}" id="username" required="true" />
+                 <h:outputLabel for="password" value="Clave:" />
+                 <p:password value="#{ilogin.usuario.contrasena}" id="password" required="true" />
+                
+                 <p:commandButton value="Iniciar sesion"   action="#{ilogin.iniciarSesion()}" icon="ui-icon-key"/>
+               
+             </h:panelGrid>
+         </p:panel>
+     </h:form>
+ </h:body>
+</html>
